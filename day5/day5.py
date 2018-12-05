@@ -20,6 +20,17 @@ def fz(c):
         return 0
 
 f = lambda d: len(reduce(lambda x,y: fx(x) if fz(x) == ord(y)+32 or fz(x) == ord(y)-32 else x+y , d))
+
+def ful():
+    ls = []
+    for letter in data:
+        if fz(ls) == ord(letter)+32 or fz(ls) == ord(letter)-32:
+            ls = fx(ls)
+        else:
+            ls.append(letter)
+    return len(''.join(ls))
+    
+print(ful())
 print(f(data))  # 9562
 
 def shortest_polymer():
